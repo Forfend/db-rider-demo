@@ -1,0 +1,5 @@
+USERS:
+  - ID: "regex:\\d+"
+    FIRST_NAME: "Oleh"
+    LAST_NAME: "Onufryk"
+    EMAIL: "oleh.onufryk@gmail.com"

@@ -1,0 +1,13 @@
+USERS:
+  - ID: 1
+    FIRST_NAME: "John"
+    LAST_NAME: "Doe"
+    EMAIL: "john.doe@gmail.com"
+  - ID: 2
+    FIRST_NAME: "Mary"
+    LAST_NAME: "Jackson"
+    EMAIL: "mjackson@gmail.com"
+  - ID: 3
+    FIRST_NAME: "Adam"
+    LAST_NAME: "Smith"
+    EMAIL: "adamsmith@gmail.com"

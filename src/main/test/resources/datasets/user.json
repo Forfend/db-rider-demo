@@ -1,0 +1,10 @@
+{
+  "USERS": [
+    {
+      "id": "regex:\\d+",
+      "first_name": "Oleh",
+      "last_name": "Onufryk",
+      "email": "oleh.onufryk@gmail.com"
+    }
+  ]
+}
