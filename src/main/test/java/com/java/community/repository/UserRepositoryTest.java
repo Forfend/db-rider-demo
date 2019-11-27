@@ -1,7 +1,9 @@
 package com.java.community.repository;
 
 import com.github.database.rider.core.api.dataset.DataSet;
+import com.github.database.rider.core.api.dataset.DataSetFormat;
 import com.github.database.rider.core.api.dataset.ExpectedDataSet;
+import com.github.database.rider.core.api.exporter.ExportDataSet;
 import com.java.community.entity.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,8 @@ public class UserRepositoryTest extends BaseTest {
     private UserRepository userRepository;
 
     @Test
-    @DataSet({"users.yml", "passports.xml"})
+    @DataSet(value = {"users.yml", "passports.xml"})
+    //@DataSet(provider = UserDataset.class)
     public void testFind() {
         List<User> all = userRepository.findAll();
         assertFalse(all.isEmpty());
@@ -25,9 +28,15 @@ public class UserRepositoryTest extends BaseTest {
     }
 
     @Test
-    @DataSet(cleanBefore = true)
     @ExpectedDataSet("user.yml")
     public void testSave() {
         userRepository.save(new User("Oleh", "Onufryk", "oleh.onufryk@gmail.com"));
+    }
+
+    @Test
+    @DataSet("users.yml")
+    @ExportDataSet(format = DataSetFormat.JSON, outputName = "target/exported/users.json")
+    public void testSaveAndExport(){
+        userRepository.save(new User("Save", "User", "save.user@gmail.com"));
     }
 }

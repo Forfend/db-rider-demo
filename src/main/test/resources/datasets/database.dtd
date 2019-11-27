@@ -1,0 +1,12 @@
+<!ELEMENT dataset (PASSPORTS| USERS)*>
+        <!ELEMENT PASSPORTS (#PCDATA)>
+        <!ATTLIST PASSPORTS
+                id CDATA #REQUIRED
+                series CDATA #REQUIRED
+                user_id CDATA #REQUIRED>
+        <!ELEMENT USERS (#PCDATA)>
+        <!ATTLIST USERS
+                id CDATA #REQUIRED
+                first_name CDATA #REQUIRED
+                last_name CDATA #REQUIRED
+                email CDATA #REQUIRED>
